@@ -53,7 +53,7 @@ class GrocerCart
         end
         total_purached_amount = @sold_products.values.sum { |item| item[:amount] }
         puts "\nTotal price : $#{total_purached_amount&.round(2)}"
-        total_savings = puts "You saved $#{()&.round(2)}"
+        total_savings = (calculate_total_amount - total_purached_amount)&.round(2)
         puts "You saved $#{(total_savings)&.round(2)}" if total_savings != 0
     end
 
